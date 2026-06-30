@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="马头琴与长调 — 蒙古族最具代表性的音乐文化，了解马头琴的历史与长调的魅力">
+  <meta name="keywords" content="马头琴, 长调, 蒙古族音乐, 非遗, 呼和浩特, 草原文化">
+  <meta property="og:title" content="马头琴 & 长调 · 草原文化体验">
+  <meta property="og:description" content="走进蒙古族音乐世界，聆听马头琴的悠扬与长调的高亢">
+  <title>马头琴 & 长调 · 草原文化体验</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+
+  <style>
+    :root {
+      --primary: #0d4a3c; --primary-dark: #082e25; --primary-light: #1a7a62;
+      --accent: #c9a96e; --accent-light: #e8d5a3; --accent-dark: #b8914b;
+      --gold-gradient: linear-gradient(135deg, #c9a96e, #e8d5a3, #c9a96e);
+      --bg-dark: #082e25; --bg-ivory: #faf6f0; --bg-light: #f5f0e8;
+      --text-dark: #2c3e35; --text-muted: #7a8a82; --text-light: #f0ebe3;
+      --shadow-lg: 0 12px 40px rgba(13,74,60,0.12);
+      --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
+      --transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+      --font-heading: 'Noto Serif SC','Georgia','Times New Roman',serif;
+      --font-body: 'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.7; }
+
+    .hero {
+      min-height: 70vh; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(160deg, #051f18 0%, #0d4a3c 40%, #1a5276 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 30% 40%, rgba(201,169,110,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(201,169,110,0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .hero-particles span {
+      position: absolute; width: var(--s,4px); height: var(--s,4px);
+      background: var(--accent); border-radius: 50%; opacity: 0.3;
+      animation: float 8s ease-in-out infinite;
+      animation-delay: var(--d,0s); left: var(--x,50%); top: var(--y,50%);
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0) scale(1); opacity: 0.2; }
+      50% { transform: translateY(-30px) scale(1.5); opacity: 0.5; }
+    }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      padding: 40px 24px; max-width: 800px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeInUp 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.3); color: var(--accent);
+      padding: 6px 20px; border-radius: 20px; font-size: 0.85rem;
+      letter-spacing: 2px; margin-bottom: 20px; backdrop-filter: blur(8px);
+    }
+    .hero-icon {
+      font-size: 4rem; margin-bottom: 16px;
+      animation: iconBounce 2s ease-in-out infinite;
+    }
+    @keyframes iconBounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .hero h1 {
+      font-family: var(--font-heading); font-size: 3.2rem; font-weight: 900;
+      color: var(--accent-light); margin-bottom: 12px; letter-spacing: 4px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .hero-divider {
+      display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 20px;
+    }
+    .hero-divider .line { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .hero-divider .diamond { color: var(--accent); font-size: 0.8rem; }
+    .hero p { color: rgba(240,235,227,0.7); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 2; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    .main-content { padding: 80px 0; background: var(--bg-ivory); }
+
+    .intro-block {
+      text-align: center; margin-bottom: 56px;
+    }
+    .intro-block h2 {
+      font-family: var(--font-heading); font-size: 2rem; color: var(--primary);
+      margin-bottom: 16px; letter-spacing: 2px;
+    }
+    .intro-block h2::after {
+      content: "✦"; display: block; font-size: 1rem; color: var(--accent); margin-top: 12px; letter-spacing: 8px;
+    }
+    .intro-block p { color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1rem; line-height: 2; }
+
+    .detail-card {
+      background: white; border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: var(--shadow-lg); transition: var(--transition);
+    }
+    .detail-card:hover { transform: translateY(-4px); box-shadow: 0 25px 60px rgba(13,74,60,0.15); }
+    .detail-card .banner {
+      height: 340px; position: relative; overflow: hidden;
+    }
+    .detail-card .banner img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .detail-card .banner .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(8,46,37,0.2), rgba(8,46,37,0.7));
+    }
+    .detail-card .banner .big-icon {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 6rem; opacity: 0.15;
+    }
+    .image-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px;
+    }
+    .image-grid img {
+      width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-md);
+      transition: var(--transition); box-shadow: var(--shadow-lg);
+    }
+    .image-grid img:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(13,74,60,0.15); }
+    .detail-body { padding: 48px; }
+
+    .info-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px;
+    }
+    .info-box {
+      background: var(--bg-light); padding: 28px; border-radius: var(--radius-md);
+      border-left: 4px solid var(--accent);
+    }
+    .info-box h3 {
+      font-family: var(--font-heading); color: var(--primary); font-size: 1.1rem;
+      margin-bottom: 14px; letter-spacing: 1px;
+    }
+    .info-box ul { list-style: none; padding: 0; }
+    .info-box ul li {
+      padding: 6px 0; color: var(--text-dark); font-size: 0.9rem;
+      border-bottom: 1px solid rgba(13,74,60,0.05);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .info-box ul li:last-child { border-bottom: none; }
+    .info-box ul li::before { content: "◆"; color: var(--accent); font-size: 0.5rem; }
+
+    .desc-section {
+      padding: 36px; background: linear-gradient(135deg, rgba(13,74,60,0.03), rgba(201,169,110,0.03));
+      border-radius: var(--radius-md); border: 1px solid rgba(201,169,110,0.1); margin-bottom: 40px;
+    }
+    .desc-section h3 {
+      font-family: var(--font-heading); color: var(--primary); font-size: 1.3rem;
+      margin-bottom: 16px; letter-spacing: 1px;
+    }
+    .desc-section p { color: var(--text-dark); line-height: 2; font-size: 0.95rem; }
+
+    .video-box {
+      background: var(--bg-dark); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px;
+    }
+    .video-box .video-header {
+      padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .video-box .video-header span { color: var(--accent-light); font-weight: 600; }
+    .video-box .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0; background: #000;
+    }
+    .video-box .video-wrapper iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+    .video-box .video-footer {
+      padding: 12px 24px; background: rgba(0,0,0,0.3); text-align: center;
+    }
+    .video-box .video-footer p { color: rgba(240,235,227,0.4); font-size: 0.8rem; }
+
+    .back-section { text-align: center; padding: 48px 0 80px; background: var(--bg-ivory); }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px; background: var(--gold-gradient); background-size: 200% 100%;
+      color: var(--bg-dark); border: none; border-radius: var(--radius-lg);
+      font-size: 1.05rem; font-weight: 700; cursor: pointer;
+      transition: var(--transition); letter-spacing: 1px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(201,169,110,0.3);
+    }
+    .back-btn:hover {
+      background-position: right center; transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(201,169,110,0.5);
+    }
+    .back-link {
+      display: inline-block; margin-top: 16px; color: var(--text-muted);
+      font-size: 0.88rem; text-decoration: none; transition: var(--transition);
+    }
+    .back-link:hover { color: var(--accent-dark); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-icon { font-size: 3rem; }
+      .info-grid { grid-template-columns: 1fr; }
+      .detail-body { padding: 28px 20px; }
+      .detail-card .banner { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-particles">
+      <span style="--x:15%;--y:20%;--d:0s;"></span>
+      <span style="--x:80%;--y:30%;--d:0.8s;--s:3px;"></span>
+      <span style="--x:30%;--y:70%;--d:1.6s;--s:5px;"></span>
+      <span style="--x:70%;--y:60%;--d:0.4s;"></span>
+      <span style="--x:50%;--y:15%;--d:2s;--s:3px;"></span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🎵 非遗瑰宝</div>
+      <div class="hero-icon">🎻</div>
+      <h1>马头琴 &amp; 长调</h1>
+      <div class="hero-divider"><span class="line"></span><span class="diamond">◆</span><span class="line"></span></div>
+      <p>聆听草原的声音——马头琴悠扬苍凉，长调高亢悠远，<br>这是蒙古族灵魂深处的音乐，已被联合国列为人类非物质文化遗产。</p>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>草原音乐的灵魂</h2>
+        <p>马头琴与长调是蒙古族最具代表性的艺术形式，它们承载着游牧民族千年的情感与记忆，是草原文化皇冠上的明珠。</p>
+      </div>
+
+      <div class="detail-card">
+        <div class="banner">
+          <img src="images/Morin-khuur.png" alt="马头琴">
+          <div class="overlay"></div>
+          <div class="big-icon">🎻</div>
+        </div>
+        <div class="detail-body">
+          <!-- 基本信息 -->
+          <div class="info-grid">
+            <div class="info-box">
+              <h3>📌 基本介绍</h3>
+              <ul>
+                <li>马头琴：蒙古族拉弦乐器，琴杆雕有马头</li>
+                <li>长调：蒙古语称"乌日汀哆"，意为悠长的歌</li>
+                <li>马头琴2006年列入国家级非遗</li>
+                <li>长调2005年列入联合国非遗代表作</li>
+                <li>流行于内蒙古、蒙古国等地区</li>
+              </ul>
+            </div>
+            <div class="info-box">
+              <h3>⭐ 艺术特色</h3>
+              <ul>
+                <li>马头琴音色苍凉悠扬，模拟马嘶、风声</li>
+                <li>长调使用"诺古拉"装饰音技巧</li>
+                <li>旋律自由辽阔，意境深远</li>
+                <li>代表作：《万马奔腾》《黑骏马》</li>
+                <li>代表艺术家：齐·宝力高</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 详细介绍 -->
+          <div class="desc-section">
+            <h3>📖 马头琴</h3>
+            <p>
+              马头琴是蒙古族最具代表性的拉弦乐器，因琴杆顶端雕刻马头而得名。
+              其琴箱呈梯形，蒙以马皮或蟒皮，琴弦使用马尾制成。马头琴的音色
+              悠扬苍凉，既能模仿万马奔腾的磅礴气势，又能诉说草原儿女的柔情
+              与思念。在蒙古族传说中，马头琴是一位少年为纪念死去的白马而创造，
+              琴声寄托着人与马之间深厚的情感。如今，马头琴已走向世界舞台，
+              成为草原文化最具辨识度的符号之一。
+            </p>
+          </div>
+
+          <div class="desc-section">
+            <h3>📖 蒙古族长调</h3>
+            <p>
+              蒙古族长调民歌（"乌日汀哆"）是蒙古族最早、最具代表性的民歌形式，
+              旋律悠长舒缓、意境开阔，被誉为"草原音乐的活化石"。长调的演唱
+              运用独特的"诺古拉"（波折音）技巧，歌声仿佛与天地共鸣。2005年，
+              蒙古族长调被联合国教科文组织列为"人类口头和非物质遗产代表作"，
+              成为全人类共同的文化财富。著名长调曲目有《辽阔的草原》《走马》
+              《小黄马》等，每一首都是草原生活的诗意写照。
+            </p>
+          </div>
+
+          <!-- 视频 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span>🎬 马头琴 &amp; 长调欣赏</span>
+            </div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://player.bilibili.com/player.html?isOutside=true&aid=383283050&bvid=BV1mZ4y1y7jc&cid=577863937&p=1&autoplay=0"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                title="马头琴 & 长调介绍"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </div>
+            <div class="video-footer">
+              <p>🎥 点击播放 · 马头琴与长调经典曲目欣赏</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="back-section">
+    <div class="container">
+      <p style="color:var(--text-muted);margin-bottom:20px;font-size:0.95rem;">
+        感受马头琴与长调的魅力，开启您的草原文化之旅
+      </p>
+      <a href="index.html" class="back-btn"><span>←</span> 返回首页</a>
+      <br>
+      <a href="index.html#culture" class="back-link">🎪 返回草原文化体验 →</a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.detail-card');
+      if (cards.length && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        cards.forEach(card => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(40px)';
+          card.style.transition = 'all 0.6s cubic-bezier(0.34,1.56,0.64,1)';
+          observer.observe(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
